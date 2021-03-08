@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Principal</h1>
-  <app-criar-produto></app-criar-produto>
+  <app-criar-produto (produtoCriado)="recebeProduto($event)"></app-criar-produto>
   <hr />
   <div class="row">
     <div class="col-12">

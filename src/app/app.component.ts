@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,5 +16,12 @@ export class AppComponent {
     descricao: 'Ideal para uso no dia a dia, indicado para corridas.',
     }];
 
-  title = 'lista-de-produtos';
+    recebeProduto(produto: { nome: string, descricao: string }) {
+      this.produtos.push({
+        nome: produto.nome,
+        descricao: produto.descricao
+      })
+    }
+
+
 }

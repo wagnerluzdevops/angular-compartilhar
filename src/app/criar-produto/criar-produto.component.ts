@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-criar-produto',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CriarProdutoComponent implements OnInit {
 
-  constructor() { }
+  @Output() produtoCriado = new EventEmitter<{ nome: string, descricao: string }>();
+  // @Output() formValue = new EventEmitter();
+
+  form: FormGroup;
+  
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      novoProduto: this.fb.control(null),
+      descricaoNovoProduto: this.fb.control(null),
+    });
   }
+
+  criarProduto() {
+    // console.log(this.form.value);
+    this.produtoCriado.emit(this.form.value)
+  }
+
 
 }
