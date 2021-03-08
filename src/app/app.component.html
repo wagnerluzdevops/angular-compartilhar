@@ -1,9 +1,10 @@
 <div class="container">
+  <h1>Principal</h1>
   <app-criar-produto></app-criar-produto>
   <hr />
   <div class="row">
     <div class="col-12">
-      <app-detalhe-produto></app-detalhe-produto>
+      <app-detalhe-produto [produto]="produto" *ngFor="let produto of produtos"></app-detalhe-produto>
     </div>
   </div>
 </div>
