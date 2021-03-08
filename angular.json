@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "lista-de-produtos"
+    }
+  },
+  "defaultProject": "lista-de-produtos",
+  "cli": {
+    "analytics": "1ecdb958-66ef-4e12-803d-8c416ad3bfcc"
+  }
 }
