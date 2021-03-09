@@ -24,7 +24,12 @@ export class CriarProdutoComponent implements OnInit {
 
   criarProduto() {
     // console.log(this.form.value);
-    this.produtoCriado.emit(this.form.value)
+    // this.produtoCriado.emit(this.form.value)
+    // console.log('Novo Produto Form: ' + this.form.get('novoProduto').value);
+    this.produtoCriado.emit({
+      nome: this.form.get('novoProduto').value,
+      descricao: this.form.get('descricaoNovoProduto').value
+    })
   }
 
 

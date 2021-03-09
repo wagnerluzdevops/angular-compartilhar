@@ -17,10 +17,12 @@ export class AppComponent {
     }];
 
     recebeProduto(produto: { nome: string, descricao: string }) {
+      // console.log('Produto: ' + JSON.stringify(produto));
       this.produtos.push({
         nome: produto.nome,
         descricao: produto.descricao
       })
+      // console.log('Produtos: ' + JSON.stringify(this.produtos));
     }
 
 
